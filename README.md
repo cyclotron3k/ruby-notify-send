@@ -16,10 +16,11 @@ Usage
 ```
 require 'notify-send'
 
-# With positional parameters:
+# With positional parameters (summary, [body], [icon], [timeout]):
 NotifySend.send "Long running process just completed"
 NotifySend.send "Title", "some extra text"
-NotifySend.send "Title", "some extra text", "error" # <--- specifiying an icon
+NotifySend.send "Title", "some extra text", "error" # <--- use the 'error' icon
+NotifySend.send "Title", "some extra text", "error", 1000 # See 'Notes'
 
 # With a hash:
 NotifySend.send({summary: "Hi", timeout: 2000})
