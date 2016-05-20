@@ -1,5 +1,4 @@
-NotifySend for Ruby
--------
+#NotifySend for Ruby
 
 This gem allows you to generate desktop notifications from your Ruby script.
 
@@ -24,7 +23,8 @@ NotifySend.send "Title", "some extra text", "error", 1000 # See 'Notes'
 
 # With a hash:
 NotifySend.send({summary: "Hi", timeout: 2000})
-NotifySend.send({summary: "Hi", body: "Hello, World!", icon: "info"})
+NotifySend.send({summary: "Hi", body: "<b>Hello, World!</b>", icon: "info"})
+NotifySend.send summary: "Hello, World!", icon: "notification-audio-volume-off"
 ```
 
 Icons
@@ -38,5 +38,7 @@ The `:icon` parameter can be one of:
 Notes and known issues
 -------
 
-* `:timeout` seems to be ignored on my desktop
-* If `:summary` is an empty string, the notification will not be displayed
+* `:timeout` seems to be ignored on my desktop.
+* If `:summary` is an empty string, the notification will not be displayed.
+* For reference, the: [D-BUS notification spec](https://developer.gnome.org/notification-spec/).
+* Needs better inputs validation. E.g. D-Bus demands that `:timeout` must be an Int, but this gem does not enforce that.
