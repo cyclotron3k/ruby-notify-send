@@ -1,4 +1,5 @@
-#NotifySend for Ruby
+NotifySend for Ruby
+=======
 
 This gem allows you to generate desktop notifications from your Ruby script.
 
@@ -12,7 +13,7 @@ Installation
 Usage
 -------
 
-```
+```ruby
 require 'notify-send'
 
 # With positional parameters (summary, [body], [icon], [timeout]):
